@@ -1,0 +1,59 @@
+{{!-- alert for removed users --}}
+{{#if removedUser}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  User has been removed.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+{{!-- the button for adding users --}}
+<div class="row">
+  <div class="col-6">
+    <h1>Users</h1>
+  </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a onclick="myFunction3()" href="/adduser" class="btn btn-primary align-self-center">Add New User</a>
+  </div>
+</div>
+{{!-- making the table --}}
+<table class="table table-sm" id="jqxgrid">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">DoB</th>
+      <th scope="col">Phone</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    {{!-- #each rows in hbs allows to add the information from db to each row --}}
+    <tr>
+      <th scope="row" class="text-align-center">{{this.id}}</th>
+      <td>{{this.first_name}}</td>
+      <td>{{this.last_name}}</td>
+      <td>{{this.dob}}</td>
+      <td>{{this.phone}}</td>
+      <td class="text-end">
+        <a href="/viewuser/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> View</a>
+        <a href="/edituser/{{this.id}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-pencil-square"></i> Edit</a>
+        <a onclick="myFunction1()" href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-person-x"></i> Delete</a>
+      </td>
+    </tr>
+
+
+    <script type="text/javascript">
+      function myFunction1() {
+        alert("Are you sure you want to delete this user?");
+      };
+
+      function myFunction3() {
+        alert("Add new user?");
+      };
+    </script>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,0 +1,1040 @@
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" required pattern="[A-Za-z]+" id="first_name" value="{{this.first_name}}"
+            placeholder="First Name" name="first_name">
+        <label for="floatingInput">First Name</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" required pattern="[A-Za-z]+" id="last_name" value="{{this.last_name}}"
+            placeholder="Last Name" name="last_name">
+        <label for="floatingInput">Last Name</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input class="form-control" type="date" id="dob" value="{{this.dob}}" min="1910-01-01" id="floatingInput"
+            placeholder="DoB" name="dob" required pattern="[^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$]">
+        <label for="floatingInput">DoB</label>
+        <script type="text/javascript">
+            dob.max = new Date().toISOString().split("T")[0];
+        </script>
+    </div>
+</div>
+<div class="col-6">
+    <div class="row" style="padding-left: 13px; width: 555px;">
+        <select id="country" onchange="country_code(country)"
+            style="height: 58px; width: 270px; border-radius: 5px; border-color: #D3D3D3;">
+            <option value="select country">select country</option>
+            <option value="AF">Afghanistan</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+            <option value="AS">American Samoa</option>
+            <option value="AD">Andorra</option>
+            <option value="AO">Angola</option>
+            <option value="AI">Anguilla</option>
+            <option value="AQ">Antartica</option>
+            <option value="AG">Antigua &amp; Barbuda</option>
+            <option value="AR">Argentina</option>
+            <option value="AM">Armenia</option>
+            <option value="AW">Aruba</option>
+            <option value="AU">Australia</option>
+            <option value="AT">Austria</option>
+            <option value="AZ">Azerbaijan</option>
+            <option value="BS">Bahamas</option>
+            <option value="BH">Bahrain</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BB">Barbados</option>
+            <option value="BY">Belarus</option>
+            <option value="BE">Belgium</option>
+            <option value="BZ">Belize</option>
+            <option value="BJ">Benin</option>
+            <option value="BM">Bermuda</option>
+            <option value="BT">Bhutan</option>
+            <option value="BO">Bolivia</option>
+            <option value="BA">Bosnia &amp; Herzegovina</option>
+            <option value="BW">Botswana</option>
+            <option value="BR">Brazil</option>
+            <option value="IO">British India Ocean Terrirory</option>
+            <option value="VG">British Virgin Islands</option>
+            <option value="BN">Brunei</option>
+            <option value="BG">Bulgaria</option>
+            <option value="BF">Burkina Faso</option>
+            <option value="BI">Burundi</option>
+            <option value="KH">Cambodia</option>
+            <option value="CM">Cameroon</option>
+            <option value="CA">Canada</option>
+            <option value="CV">Cape Verde Islands</option>
+            <option value="KY">Cayman Islands</option>
+            <option value="CF">Central African Republic</option>
+            <option value="TD">Chad</option>
+            <option value="CL">Chile</option>
+            <option value="CN">China</option>
+            <option value="CX">Christmas Island</option>
+            <option value="CC">Cocos Islands</option>
+            <option value="CO">Colombia</option>
+            <option value="KM">Comoros</option>
+            <option value="CK">Cook Islands</option>
+            <option value="CR">Costa Rica</option>
+            <option value="HR">Croatia</option>
+            <option value="CU">Cuba</option>
+            <option value="CW">Curacao</option>
+            <option value="90">Cyprus - North</option>
+            <option value="357">Cyprus - South</option>
+            <option value="CZ">Czech Republic</option>
+            <option value="CD">Democratic Republic of Congo</option>
+            <option value="DK">Denmark</option>
+            <option value="DJ">Djibouti</option>
+            <option value="DM">Dominica</option>
+            <option value="DO">Dominican Republic</option>
+            <option value="TL">East Timor</option>
+            <option value="EC">Ecuador</option>
+            <option value="EG">Egypt</option>
+            <option value="SV">El Salvador</option>
+            <option value="GQ">Equatorial Guinea</option>
+            <option value="ER">Eritrea</option>
+            <option value="EE">Estonia</option>
+            <option value="ET">Ethiopia</option>
+            <option value="FK">Falkland Islands</option>
+            <option value="FO">Faroe Islands</option>
+            <option value="FJ">Fiji</option>
+            <option value="FI">Finland</option>
+            <option value="FR">France</option>
+            <option value="GF">French Guiana</option>
+            <option value="PF">French Polynesia</option>
+            <option value="GA">Gabon</option>
+            <option value="GM">Gambia</option>
+            <option value="GE">Georgia</option>
+            <option value="DE">Germany</option>
+            <option value="GH">Ghana</option>
+            <option value="GI">Gibraltar</option>
+            <option value="GR">Greece</option>
+            <option value="GL">Greenland</option>
+            <option value="GD">Grenada</option>
+            <option value="GP">Guadeloupe</option>
+            <option value="GU">Guam</option>
+            <option value="GT">Guatemala</option>
+            <option value="GG">Guernsey</option>
+            <option value="GN">Guinea</option>
+            <option value="GW">Guinea-Bissau</option>
+            <option value="GY">Guyana</option>
+            <option value="HT">Haiti</option>
+            <option value="HN">Honduras</option>
+            <option value="HK">Hong Kong</option>
+            <option value="HU">Hungary</option>
+            <option value="IS">Iceland</option>
+            <option value="IN">India</option>
+            <option value="ID">Indonesia</option>
+            <option value="IR">Iran</option>
+            <option value="IQ">Iraq</option>
+            <option value="IE">Ireland</option>
+            <option value="IM">Isle of Man</option>
+            <option value="IL">Israel</option>
+            <option value="IT">Italy</option>
+            <option value="CI">Ivory Coast</option>
+            <option value="JM">Jamaica</option>
+            <option value="JP">Japan</option>
+            <option value="JE">Jersey</option>
+            <option value="JO">Jordan</option>
+            <option value="KZ">Kazakhstan</option>
+            <option value="KE">Kenya</option>
+            <option value="KI">Kiribati</option>
+            <option value="XK">Kosovo</option>
+            <option value="KW">Kuwait</option>
+            <option value="KG">Kyrgyzstan</option>
+            <option value="LA">Laos</option>
+            <option value="LV">Latvia</option>
+            <option value="LB">Lebanon</option>
+            <option value="LS">Lesotho</option>
+            <option value="LR">Liberia</option>
+            <option value="LY">Libya</option>
+            <option value="LI">Liechtenstein</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MO">Macao</option>
+            <option value="MK">Macedonia</option>
+            <option value="MG">Madagascar</option>
+            <option value="MW">Malawi</option>
+            <option value="MY">Malaysia</option>
+            <option value="MV">Maldives</option>
+            <option value="ML">Mali</option>
+            <option value="MT">Malta</option>
+            <option value="MH">Marshall Islands</option>
+            <option value="MQ">Martinique</option>
+            <option value="MR">Mauritania</option>
+            <option value="YT">Mayotte</option>
+            <option value="MX">Mexico</option>
+            <option value="FM">Micronesia</option>
+            <option value="MD">Moldova</option>
+            <option value="MC">Monaco</option>
+            <option value="976">Mongolia</option>
+            <option value="ME">Montengro</option>
+            <option value="MS">Montserrat</option>
+            <option value="MA">Morocco</option>
+            <option value="MZ">Mozambique</option>
+            <option value="MN">Myanmar</option>
+            <option value="NA">Namibia</option>
+            <option value="NR">Nauru</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Netherlands</option>
+            <option value="AN">Netherlands Antilles</option>
+            <option value="NC">New Caledonia</option>
+            <option value="NZ">New Zealand</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Niger</option>
+            <option value="NG">Nigeria</option>
+            <option value="NU">Niue</option>
+            <option value="KP">North Korea</option>
+            <option value="NF">Norfolk Islands</option>
+            <option value="670">Northern Marianas</option>
+            <option value="NO">Norway</option>
+            <option value="OM">Oman</option>
+            <option value="PK">Pakistan</option>
+            <option value="PW">Palau</option>
+            <option value="PS">Palestine</option>
+            <option value="PA">Panama</option>
+            <option value="PG">Papua New Guinea</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Peru</option>
+            <option value="PH">Philippines</option>
+            <option value="PN">Pitcairn</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="QA">Qatar</option>
+            <option value="CG">Republic of the Congo</option>
+            <option value="RE">Reunion</option>
+            <option value="RO">Romania</option>
+            <option value="RU">Russia</option>
+            <option value="RW">Rwanda</option>
+            <option value="BL">Saint Barthelemy</option>
+            <option value="SH">Saint Helena</option>
+            <option value="KN">Saint Kitts &amp; Nevis</option>
+            <option value="1758">Saint Lucia</option>
+            <option value="SR">Suriname</option>
+            <option value="MF">Saint Martin</option>
+            <option value="PM">Saint Saint Pierre and Miquelon</option>
+            <option value="VC">Saint Vincent and the Grenadines</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">Sao Tome &amp; Principe</option>
+            <option value="SA">Saudi Arabia</option>
+            <option value="SN">Senegal</option>
+            <option value="CS">Serbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leone</option>
+            <option value="SG">Singapore</option>
+            <option value="SX">Sint Maarten</option>
+            <option value="SK">Slovakia</option>
+            <option value="SI">Slovenia</option>
+            <option value="SB">Solomon Islands</option>
+            <option value="SO">Somalia</option>
+            <option value="ZA">South Africa</option>
+            <option value="KR">South Korea</option>
+            <option value="SS">South Sudan</option>
+            <option value="ES">Spain</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="SD">Sudan</option>
+            <option value="SR">Suriname</option>
+            <option value="SJ">Svalbard &amp; Jan Mayen</option>
+            <option value="SZ">Swaziland</option>
+            <option value="SE">Sweden</option>
+            <option value="CH">Switzerland</option>
+            <option value="SY">Syria</option>
+            <option value="TW">Taiwan</option>
+            <option value="TJ">Tajikistan</option>
+            <option value="TZ">Tanzania</option>
+            <option value="TH">Thailand</option>
+            <option value="TG">Togo</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinidad &amp; Tobago</option>
+            <option value="TN">Tunisia</option>
+            <option value="TR">Turkey</option>
+            <option value="TM">Turkmenistan</option>
+            <option value="TC">Turks &amp; Caicos Islands</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ukraine</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="UY">Uruguay</option>
+            <option value="UZ">Uzbekistan</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VA">Vatican City</option>
+            <option value="VE">Venezuela</option>
+            <option value="VN">Vietnam</option>
+            <option value="WF">Wallis &amp; Futuna</option>
+            <option value="969">Yemen (North)</option>
+            <option value="967">Yemen (South)</option>
+            <option value="ZM">Zambia</option>
+            <option value="ZW">Zimbabwe</option>
+        </select>
+        <input type="tel" id="phone" class="form-control" placeholder="Phone" value="{{this.phone}}" name="phone"
+            maxlength="13" style="width: 270px; height:58px;" required />
+        <script>
+            function country_code() {
+                var val = document.getElementById("country").value;
+
+                if (val === "select country") {
+                    document.getElementById("phone").value = "";
+                }
+                else if (val === "AF") {
+                    document.getElementById("phone").value = "+93";
+                }
+                else if (val === "AL") {
+                    document.getElementById("phone").value = "+355";
+                }
+                else if (val === "DZ") {
+                    document.getElementById("phone").value = "+213";
+                }
+                else if (val === "AS") {
+                    document.getElementById("phone").value = "+1684";
+                }
+                else if (val === "AD") {
+                    document.getElementById("phone").value = "+376";
+                }
+                else if (val === "AO") {
+                    document.getElementById("phone").value = "+244";
+                }
+                else if (val === "AI") {
+                    document.getElementById("phone").value = "+1264";
+                }
+                else if (val === "AQ") {
+                    document.getElementById("phone").value = "+672";
+                }
+                else if (val === "AG") {
+                    document.getElementById("phone").value = "+1268";
+                }
+                else if (val === "AR") {
+                    document.getElementById("phone").value = "+54";
+                }
+                else if (val === "AM") {
+                    document.getElementById("phone").value = "+374";
+                }
+                else if (val === "AW") {
+                    document.getElementById("phone").value = "+297";
+                }
+                else if (val === "AU") {
+                    document.getElementById("phone").value = "+61";
+                }
+                else if (val === "AT") {
+                    document.getElementById("phone").value = "+43";
+                }
+                else if (val === "AZ") {
+                    document.getElementById("phone").value = "+994";
+                }
+                else if (val === "BS") {
+                    document.getElementById("phone").value = "+1242";
+                }
+                else if (val === "BH") {
+                    document.getElementById("phone").value = "+973";
+                }
+                else if (val === "BD") {
+                    document.getElementById("phone").value = "+880";
+                }
+                else if (val === "BB") {
+                    document.getElementById("phone").value = "+1246";
+                }
+                else if (val === "BY") {
+                    document.getElementById("phone").value = "+375";
+                }
+                else if (val === "BE") {
+                    document.getElementById("phone").value = "+32";
+                }
+                else if (val === "BZ") {
+                    document.getElementById("phone").value = "+501";
+                }
+                else if (val === "BJ") {
+                    document.getElementById("phone").value = "+229";
+                }
+                else if (val === "BM") {
+                    document.getElementById("phone").value = "+1441";
+                }
+                else if (val === "BT") {
+                    document.getElementById("phone").value = "+975";
+                }
+                else if (val === "BO") {
+                    document.getElementById("phone").value = "+591";
+                }
+                else if (val === "BA") {
+                    document.getElementById("phone").value = "+387";
+                }
+                else if (val === "BW") {
+                    document.getElementById("phone").value = "+267";
+                }
+                else if (val === "BR") {
+                    document.getElementById("phone").value = "+55";
+                }
+                else if (val === "IO") {
+                    document.getElementById("phone").value = "+246";
+                }
+                else if (val === "VG") {
+                    document.getElementById("phone").value = "+1284";
+                }
+                else if (val === "BN") {
+                    document.getElementById("phone").value = "+673";
+                }
+                else if (val === "BG") {
+                    document.getElementById("phone").value = "+359";
+                }
+                else if (val === "BF") {
+                    document.getElementById("phone").value = "+226";
+                }
+                else if (val === "BI") {
+                    document.getElementById("phone").value = "+257";
+                }
+                else if (val === "KH") {
+                    document.getElementById("phone").value = "+885";
+                }
+                else if (val === "CM") {
+                    document.getElementById("phone").value = "+237";
+                }
+                else if (val === "CA") {
+                    document.getElementById("phone").value = "+1";
+                }
+                else if (val === "CV") {
+                    document.getElementById("phone").value = "+238";
+                }
+                else if (val === "KY") {
+                    document.getElementById("phone").value = "+1345";
+                }
+                else if (val === "CF") {
+                    document.getElementById("phone").value = "+236";
+                }
+                else if (val === "TD") {
+                    document.getElementById("phone").value = "+235";
+                }
+                else if (val === "CL") {
+                    document.getElementById("phone").value = "+56";
+                }
+                else if (val === "CN") {
+                    document.getElementById("phone").value = "+86";
+                }
+                else if (val === "CX") {
+                    document.getElementById("phone").value = "+61";
+                }
+                else if (val === "CC") {
+                    document.getElementById("phone").value = "+61";
+                }
+                else if (val === "CO") {
+                    document.getElementById("phone").value = "+57";
+                }
+                else if (val === "KM") {
+                    document.getElementById("phone").value = "+269";
+                }
+                else if (val === "CK") {
+                    document.getElementById("phone").value = "+682";
+                }
+                else if (val === "CR") {
+                    document.getElementById("phone").value = "+506";
+                }
+                else if (val === "HR") {
+                    document.getElementById("phone").value = "+385";
+                }
+                else if (val === "CU") {
+                    document.getElementById("phone").value = "+53";
+                }
+                else if (val === "CW") {
+                    document.getElementById("phone").value = "+599";
+                }
+                else if (val === "90") {
+                    document.getElementById("phone").value = "+90";
+                }
+                else if (val === "357") {
+                    document.getElementById("phone").value = "+357";
+                }
+                else if (val === "CZ") {
+                    document.getElementById("phone").value = "+420";
+                }
+                else if (val === "CD") {
+                    document.getElementById("phone").value = "+243";
+                }
+                else if (val === "DK") {
+                    document.getElementById("phone").value = "+45";
+                }
+                else if (val === "DJ") {
+                    document.getElementById("phone").value = "+253";
+                }
+                else if (val === "DM") {
+                    document.getElementById("phone").value = "+1809";
+                }
+                else if (val === "DO") {
+                    document.getElementById("phone").value = "+1809";
+                }
+                else if (val === "TL") {
+                    document.getElementById("phone").value = "+670";
+                }
+                else if (val === "EC") {
+                    document.getElementById("phone").value = "+593";
+                }
+                else if (val === "EG") {
+                    document.getElementById("phone").value = "+20";
+                }
+                else if (val === "SV") {
+                    document.getElementById("phone").value = "+503";
+                }
+                else if (val === "GQ") {
+                    document.getElementById("phone").value = "+240";
+                }
+                else if (val === "ER") {
+                    document.getElementById("phone").value = "+291";
+                }
+                else if (val === "EE") {
+                    document.getElementById("phone").value = "+372";
+                }
+                else if (val === "ET") {
+                    document.getElementById("phone").value = "+251";
+                }
+                else if (val === "FK") {
+                    document.getElementById("phone").value = "+500";
+                }
+                else if (val === "FO") {
+                    document.getElementById("phone").value = "+298";
+                }
+                else if (val === "FJ") {
+                    document.getElementById("phone").value = "+679";
+                }
+                else if (val === "FI") {
+                    document.getElementById("phone").value = "+358";
+                }
+                else if (val === "FR") {
+                    document.getElementById("phone").value = "+33";
+                }
+                else if (val === "GF") {
+                    document.getElementById("phone").value = "+594";
+                }
+                else if (val === "PF") {
+                    document.getElementById("phone").value = "+689";
+                }
+                else if (val === "GA") {
+                    document.getElementById("phone").value = "+241";
+                }
+                else if (val === "GM") {
+                    document.getElementById("phone").value = "+220";
+                }
+                else if (val === "GE") {
+                    document.getElementById("phone").value = "+7880";
+                }
+                else if (val === "DE") {
+                    document.getElementById("phone").value = "+49";
+                }
+                else if (val === "GH") {
+                    document.getElementById("phone").value = "+233";
+                }
+                else if (val === "GI") {
+                    document.getElementById("phone").value = "+350";
+                }
+                else if (val === "GR") {
+                    document.getElementById("phone").value = "+30";
+                }
+                else if (val === "GL") {
+                    document.getElementById("phone").value = "+299";
+                }
+                else if (val === "GD") {
+                    document.getElementById("phone").value = "+1473";
+                }
+                else if (val === "GP") {
+                    document.getElementById("phone").value = "+590";
+                }
+                else if (val === "GU") {
+                    document.getElementById("phone").value = "+671";
+                }
+                else if (val === "GT") {
+                    document.getElementById("phone").value = "+502";
+                }
+                else if (val === "GG") {
+                    document.getElementById("phone").value = "+44";
+                }
+                else if (val === "GN") {
+                    document.getElementById("phone").value = "+224";
+                }
+                else if (val === "GW") {
+                    document.getElementById("phone").value = "+245";
+                }
+                else if (val === "GY") {
+                    document.getElementById("phone").value = "+592";
+                }
+                else if (val === "HT") {
+                    document.getElementById("phone").value = "+509";
+                }
+                else if (val === "HN") {
+                    document.getElementById("phone").value = "+504";
+                }
+                else if (val === "HK") {
+                    document.getElementById("phone").value = "+852";
+                }
+                else if (val === "HU") {
+                    document.getElementById("phone").value = "+36";
+                }
+                else if (val === "IS") {
+                    document.getElementById("phone").value = "+354";
+                }
+                else if (val === "IN") {
+                    document.getElementById("phone").value = "+91";
+                }
+                else if (val === "ID") {
+                    document.getElementById("phone").value = "+62";
+                }
+                else if (val === "IR") {
+                    document.getElementById("phone").value = "+98";
+                }
+                else if (val === "IQ") {
+                    document.getElementById("phone").value = "+964";
+                }
+                else if (val === "IE") {
+                    document.getElementById("phone").value = "+353";
+                }
+                else if (val === "IM") {
+                    document.getElementById("phone").value = "+44";
+                }
+                else if (val === "IL") {
+                    document.getElementById("phone").value = "+972";
+                }
+                else if (val === "IT") {
+                    document.getElementById("phone").value = "+39";
+                }
+                else if (val === "CI") {
+                    document.getElementById("phone").value = "+225";
+                }
+                else if (val === "JM") {
+                    document.getElementById("phone").value = "+1876";
+                }
+                else if (val === "JP") {
+                    document.getElementById("phone").value = "+81";
+                }
+                else if (val === "JE") {
+                    document.getElementById("phone").value = "+44";
+                }
+                else if (val === "JO") {
+                    document.getElementById("phone").value = "+962";
+                }
+                else if (val === "KZ") {
+                    document.getElementById("phone").value = "+7";
+                }
+                else if (val === "KE") {
+                    document.getElementById("phone").value = "+254";
+                }
+                else if (val === "KI") {
+                    document.getElementById("phone").value = "+686";
+                }
+                else if (val === "XK") {
+                    document.getElementById("phone").value = "+383";
+                }
+                else if (val === "KW") {
+                    document.getElementById("phone").value = "+965";
+                }
+                else if (val === "KG") {
+                    document.getElementById("phone").value = "+996";
+                }
+                else if (val === "LA") {
+                    document.getElementById("phone").value = "+856";
+                }
+                else if (val === "LV") {
+                    document.getElementById("phone").value = "+371";
+                }
+                else if (val === "LB") {
+                    document.getElementById("phone").value = "+961";
+                }
+                else if (val === "LS") {
+                    document.getElementById("phone").value = "+266";
+                }
+                else if (val === "LR") {
+                    document.getElementById("phone").value = "+231";
+                }
+                else if (val === "LY") {
+                    document.getElementById("phone").value = "+218";
+                }
+                else if (val === "LI") {
+                    document.getElementById("phone").value = "+417";
+                }
+                else if (val === "LT") {
+                    document.getElementById("phone").value = "+370";
+                }
+                else if (val === "LU") {
+                    document.getElementById("phone").value = "+352";
+                }
+                else if (val === "MO") {
+                    document.getElementById("phone").value = "+853";
+                }
+                else if (val === "MK") {
+                    document.getElementById("phone").value = "+389";
+                }
+                else if (val === "MG") {
+                    document.getElementById("phone").value = "+261";
+                }
+                else if (val === "MW") {
+                    document.getElementById("phone").value = "+265";
+                }
+                else if (val === "MY") {
+                    document.getElementById("phone").value = "+60";
+                }
+                else if (val === "MV") {
+                    document.getElementById("phone").value = "+960";
+                }
+                else if (val === "ML") {
+                    document.getElementById("phone").value = "+223";
+                }
+                else if (val === "MT") {
+                    document.getElementById("phone").value = "+356";
+                }
+                else if (val === "MH") {
+                    document.getElementById("phone").value = "+692";
+                }
+                else if (val === "MQ") {
+                    document.getElementById("phone").value = "+596";
+                }
+                else if (val === "MR") {
+                    document.getElementById("phone").value = "+222";
+                }
+                else if (val === "YT") {
+                    document.getElementById("phone").value = "+269";
+                }
+                else if (val === "MX") {
+                    document.getElementById("phone").value = "+52";
+                }
+                else if (val === "FM") {
+                    document.getElementById("phone").value = "+691";
+                }
+                else if (val === "MD") {
+                    document.getElementById("phone").value = "+373";
+                }
+                else if (val === "MC") {
+                    document.getElementById("phone").value = "+377";
+                }
+                else if (val === "976") {
+                    document.getElementById("phone").value = "+976";
+                }
+                else if (val === "ME") {
+                    document.getElementById("phone").value = "+382";
+                }
+                else if (val === "MS") {
+                    document.getElementById("phone").value = "+1664";
+                }
+                else if (val === "MA") {
+                    document.getElementById("phone").value = "+212";
+                }
+                else if (val === "MZ") {
+                    document.getElementById("phone").value = "+258";
+                }
+                else if (val === "MN") {
+                    document.getElementById("phone").value = "+95";
+                }
+                else if (val === "NA") {
+                    document.getElementById("phone").value = "+264";
+                }
+                else if (val === "NR") {
+                    document.getElementById("phone").value = "+674";
+                }
+                else if (val === "NP") {
+                    document.getElementById("phone").value = "+977";
+                }
+                else if (val === "NL") {
+                    document.getElementById("phone").value = "+31";
+                }
+                else if (val === "AN") {
+                    document.getElementById("phone").value = "+599";
+                }
+                else if (val === "NC") {
+                    document.getElementById("phone").value = "+687";
+                }
+                else if (val === "NZ") {
+                    document.getElementById("phone").value = "+64";
+                }
+                else if (val === "NI") {
+                    document.getElementById("phone").value = "+505";
+                }
+                else if (val === "NE") {
+                    document.getElementById("phone").value = "+227";
+                }
+                else if (val === "NG") {
+                    document.getElementById("phone").value = "+234";
+                }
+                else if (val === "NU") {
+                    document.getElementById("phone").value = "+683";
+                }
+                else if (val === "KP") {
+                    document.getElementById("phone").value = "+850";
+                }
+                else if (val === "NF") {
+                    document.getElementById("phone").value = "+672";
+                }
+                else if (val === "670") {
+                    document.getElementById("phone").value = "+670";
+                }
+                else if (val === "NO") {
+                    document.getElementById("phone").value = "+47";
+                }
+                else if (val === "OM") {
+                    document.getElementById("phone").value = "+968";
+                }
+                else if (val === "PK") {
+                    document.getElementById("phone").value = "+92";
+                }
+                else if (val === "PW") {
+                    document.getElementById("phone").value = "+680";
+                }
+                else if (val === "PS") {
+                    document.getElementById("phone").value = "+970";
+                }
+                else if (val === "PA") {
+                    document.getElementById("phone").value = "+507";
+                }
+                else if (val === "PG") {
+                    document.getElementById("phone").value = "+675";
+                }
+                else if (val === "PY") {
+                    document.getElementById("phone").value = "+595";
+                }
+                else if (val === "PE") {
+                    document.getElementById("phone").value = "+51";
+                }
+                else if (val === "PH") {
+                    document.getElementById("phone").value = "+63";
+                }
+                else if (val === "PN") {
+                    document.getElementById("phone").value = "+64";
+                }
+                else if (val === "PL") {
+                    document.getElementById("phone").value = "+48";
+                }
+                else if (val === "PT") {
+                    document.getElementById("phone").value = "+351";
+                }
+                else if (val === "PR") {
+                    document.getElementById("phone").value = "+1787";
+                }
+                else if (val === "QA") {
+                    document.getElementById("phone").value = "+974";
+                }
+                else if (val === "CG") {
+                    document.getElementById("phone").value = "+242";
+                }
+                else if (val === "RE") {
+                    document.getElementById("phone").value = "+262";
+                }
+                else if (val === "RO") {
+                    document.getElementById("phone").value = "+40";
+                }
+                else if (val === "RU") {
+                    document.getElementById("phone").value = "+7";
+                }
+                else if (val === "RW") {
+                    document.getElementById("phone").value = "+250";
+                }
+                else if (val === "BL") {
+                    document.getElementById("phone").value = "+590";
+                }
+                else if (val === "SH") {
+                    document.getElementById("phone").value = "+290";
+                }
+                else if (val === "KN") {
+                    document.getElementById("phone").value = "+1869";
+                }
+                else if (val === "1758") {
+                    document.getElementById("phone").value = "+1758";
+                }
+                else if (val === "SR") {
+                    document.getElementById("phone").value = "+597";
+                }
+                else if (val === "MF") {
+                    document.getElementById("phone").value = "+590";
+                }
+                else if (val === "PM") {
+                    document.getElementById("phone").value = "+508";
+                }
+                else if (val === "VC") {
+                    document.getElementById("phone").value = "+1784";
+                }
+                else if (val === "WS") {
+                    document.getElementById("phone").value = "+685";
+                }
+                else if (val === "SM") {
+                    document.getElementById("phone").value = "+378";
+                }
+                else if (val === "ST") {
+                    document.getElementById("phone").value = "+239";
+                }
+                else if (val === "SA") {
+                    document.getElementById("phone").value = "+966";
+                }
+                else if (val === "SN") {
+                    document.getElementById("phone").value = "+221";
+                }
+                else if (val === "CS") {
+                    document.getElementById("phone").value = "+381";
+                }
+                else if (val === "SC") {
+                    document.getElementById("phone").value = "+248";
+                }
+                else if (val === "SL") {
+                    document.getElementById("phone").value = "+232";
+                }
+                else if (val === "SG") {
+                    document.getElementById("phone").value = "+65";
+                }
+                else if (val === "SX") {
+                    document.getElementById("phone").value = "+1721";
+                }
+                else if (val === "SK") {
+                    document.getElementById("phone").value = "+421";
+                }
+                else if (val === "SI") {
+                    document.getElementById("phone").value = "+386";
+                }
+                else if (val === "SB") {
+                    document.getElementById("phone").value = "+677";
+                }
+                else if (val === "SO") {
+                    document.getElementById("phone").value = "+252";
+                }
+                else if (val === "ZA") {
+                    document.getElementById("phone").value = "+27";
+                }
+                else if (val === "KR") {
+                    document.getElementById("phone").value = "+82";
+                }
+                else if (val === "SS") {
+                    document.getElementById("phone").value = "+211";
+                }
+                else if (val === "ES") {
+                    document.getElementById("phone").value = "+34";
+                }
+                else if (val === "LK") {
+                    document.getElementById("phone").value = "+94";
+                }
+                else if (val === "SD") {
+                    document.getElementById("phone").value = "+249";
+                }
+                else if (val === "SR") {
+                    document.getElementById("phone").value = "+597";
+                }
+                else if (val === "SJ") {
+                    document.getElementById("phone").value = "+47";
+                }
+                else if (val === "SZ") {
+                    document.getElementById("phone").value = "+268";
+                }
+                else if (val === "SE") {
+                    document.getElementById("phone").value = "+46";
+                }
+                else if (val === "CH") {
+                    document.getElementById("phone").value = "+41";
+                }
+                else if (val === "SY") {
+                    document.getElementById("phone").value = "+963";
+                }
+                else if (val === "TW") {
+                    document.getElementById("phone").value = "+886";
+                }
+                else if (val === "TJ") {
+                    document.getElementById("phone").value = "+992";
+                }
+                else if (val === "TZ") {
+                    document.getElementById("phone").value = "+255";
+                }
+                else if (val === "TH") {
+                    document.getElementById("phone").value = "+66";
+                }
+                else if (val === "TG") {
+                    document.getElementById("phone").value = "+228";
+                }
+                else if (val === "TO") {
+                    document.getElementById("phone").value = "+676";
+                }
+                else if (val === "TT") {
+                    document.getElementById("phone").value = "+1868";
+                }
+                else if (val === "TN") {
+                    document.getElementById("phone").value = "+216";
+                }
+                else if (val === "TR") {
+                    document.getElementById("phone").value = "+90";
+                }
+                else if (val === "TM") {
+                    document.getElementById("phone").value = "+993";
+                }
+                else if (val === "TC") {
+                    document.getElementById("phone").value = "+1649";
+                }
+                else if (val === "TV") {
+                    document.getElementById("phone").value = "+688";
+                }
+                else if (val === "UG") {
+                    document.getElementById("phone").value = "+256";
+                }
+                else if (val === "UA") {
+                    document.getElementById("phone").value = "+380";
+                }
+                else if (val === "AE") {
+                    document.getElementById("phone").value = "+971";
+                }
+                else if (val === "GB") {
+                    document.getElementById("phone").value = "+44";
+                }
+                else if (val === "US") {
+                    document.getElementById("phone").value = "+1";
+                }
+                else if (val === "UY") {
+                    document.getElementById("phone").value = "+598";
+                }
+                else if (val === "UZ") {
+                    document.getElementById("phone").value = "+998";
+                }
+                else if (val === "VU") {
+                    document.getElementById("phone").value = "+678";
+                }
+                else if (val === "VA") {
+                    document.getElementById("phone").value = "+379";
+                }
+                else if (val === "VE") {
+                    document.getElementById("phone").value = "+58";
+                }
+                else if (val === "VN") {
+                    document.getElementById("phone").value = "+84";
+                }
+                else if (val === "WF") {
+                    document.getElementById("phone").value = "+681";
+                }
+                else if (val === "969") {
+                    document.getElementById("phone").value = "+969";
+                }
+                else if (val === "967") {
+                    document.getElementById("phone").value = "+967";
+                }
+                else if (val === "ZM") {
+                    document.getElementById("phone").value = "+260";
+                }
+                else if (val === "ZW") {
+                    document.getElementById("phone").value = "+263";
+                }
+            }
+
+            var input = document.getElementById("phone");
+            input.onkeypress = function (evt) {
+                evt = evt || window.event;
+                if (!evt.ctrlKey && !evt.metaKey && !evt.altKey) {
+                    var charCode = (typeof evt.which == "undefined") ? evt.keyCode : evt.which;
+                    if (charCode && !/\d/.test(String.fromCharCode(charCode))) {
+                        return false;
+                    }
+                }
+            }
+        </script>
+    </div>
+</div>
+<div class="col-12">
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Leave a comment here" id="comments" name="comments"
+            style="height: 200px;"> {{this.comments}}</textarea>
+        <label for="floatingInput">Comments</label>
+    </div>
+</div>
+<div class="col-12 d-grid">
+    <button onclick="myFunction2()" class="btn btn-primary" value="Validate" type="submit">Submit</button>
+    <script>
+        function myFunction2() {
+            alert("Are you sure you want to add this user?");
+        }
+    </script>
